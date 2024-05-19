@@ -1,0 +1,44 @@
+checking string:	(aab+ab*)*
+accepted
+expression tree: 
+     STAR          
+      |             
+    UNION          
+  ____|____         
+ |        CNCT     
+ |     ____|____    
+ |    |        STAR
+ |    |         |   
+aab   a         b  
+
+
+checking string:	(a+b)ab*
+accepted
+expression tree: 
+              CNCT              
+       ________|________         
+      |                CNCT     
+      |              ___|____    
+    UNION           |       STAR
+  ____|____         |        |   
+ a         b        a        b  
+
+
+checking string:	(b+aa*bb)*(a*+aa*b)
+accepted
+expression tree: 
+                        CNCT                              
+           ______________|______________                   
+         STAR                           |                 
+          |                             |                  
+        UNION                         UNION               
+  ________|____                _________|____              
+ |            CNCT            |             CNCT          
+ |    _________|____          |     _________|____         
+ |   |             CNCT       |    |             CNCT     
+ |   |          ____|____     |    |          ____|____    
+ |   |         |        STAR STAR  |         |        STAR
+ |   |         |         |    |    |         |         |   
+ b   a         bb        a    a    a         b         a  
+
+
